@@ -16,7 +16,8 @@ Puede encontrar la documentación completa de Kivy en las siguientes URLs:
 
 En sus proyectos, el primer paso siempre será instalar Kivy, puede hacerlo con el comando:
 
-´´´
-    https://kivy.org/doc/stable/api-kivy.html
-´´´
+```
+    pip install "kivy[base]" 
+    
+```
 
