@@ -14,30 +14,29 @@ class EventsApp(App):
         Contenedor = BoxLayout(orientation='vertical')
 
         # TextInput permite al usuario ingresar texto
-        Texto = TextInput(font_size=50,
+        self.Texto = TextInput(font_size=50,
                       size_hint_y=None,
                       height=100,
                       text='Escriba aqui')
-        Contenedor.add_widget(Texto)
+        Contenedor.add_widget(self.Texto)
 
         # Scatter contiene la lógica para poder ser arrastrado con el mouse
-        Etiqueta = Label(text='Múeveme',
-                  font_size=150)
-        Contenedor.add_widget(Etiqueta)
-
-        Boton = Button(text="Saludame")
-
-        # El método bind() crea un enlace al cambiar las propiedades de un widget
-        # para que se ejecute código en otro lugar
-        Boton.bind(on_press=self.callback)
-
+        self.Etiqueta = Label(text='...',font_size=50)
+        Contenedor.add_widget(self.Etiqueta)
+        Boton = Button(text="Saludame",font_size=30)
         Contenedor.add_widget(Boton)
+
+        # Conectar con el callback con el evento press del boton
+        Boton.bind( on_press=self.callback )
 
         # Siempre se retorna el widget que contiene a todos los demás
         return Contenedor
     
-    def callback( instance, value ):
-        print( "Click!" )
+    # instance es el widget que generó el evento
+    # value es el valor actual que tiene el widget
+    def callback( self, value ):
+        self.Etiqueta.text =  "Hola " + self.Texto.text
+
 
 if __name__ == "__main__":
     EventsApp().run()
