@@ -2,6 +2,9 @@
 
 Este repositorio contiene los siguientes ejemplos:
 - hello.py : Aplicación mínima Hola Mundo en Kivy
+- input.py : Ejemplo de controles de ingreso de texto
+- events.py : Ejemplo del manejo de eventos
+- tictactoe.py : Tablero base para construir el Triqui
 
 Puede encontrar la documentación completa de Kivy en las siguientes URLs:
 

@@ -15,11 +15,16 @@ class TicTacToe(App):
             self.Tablero.add_widget( fila )
             for numero_columna in range(3):
                 casilla = Button(text= str(numero_columna) + "-" + str(numero_fila), font_size=80)
+                # Conectar el evento press de cada boton, con el callback
+                # Todos los botones van a usar un mismo callback
+                # Pero se diferencian por el segundo parametro sender
                 casilla.bind( on_press=self.seleccionar_casilla )
                 fila.add_widget(casilla)
 
         return self.Tablero
     
+    # Callback que se llama cuando hagan click en cualquier boton
+    # El boton que genera el evento es el segundo parametro "sender"
     def seleccionar_casilla( self, sender ):
         print( "Casilla seleccionada: " + sender.text )
     
